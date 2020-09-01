@@ -1,1 +1,17 @@
-<h1>Members of House </h1>
+<h1>Members of House</h1>
+
+
+<div class="members">
+  <h2><%= @members.count %> Members</h2><br><br>
+    <% @members.each do |member| %>
+      <b><p class="name"> Name: <%= member.name %></p></b><br>
+      <% if member.house != nil %>
+        <p class="house">House: <%= member.house %></p><br>
+      <% end %>
+      <% if member.role != nil %>
+        <p class="role">Role: <%= member.role %></p><br>
+      <% end %>
+      <% if member.patronus != nil %>
+        <p class="patronus">Patronus: <%= member.patronus %></p><br><br><br>
+      <% end %>
+    <% end %>
