@@ -9,5 +9,5 @@ class SearchController < ApplicationController
     # end
     # members = JSON.parse(response.body, symbolize_names: true)
     @members = Member.house_members(params[:house])
-  # end
+  end
 end

@@ -6,6 +6,18 @@ class Member
       f.params['house'] = house
       f.params['OrderOfThePhoenix'] = true
     end
-    member_info = JSON.parse(responde.body, symbolize_names: true)
+    members = JSON.parse(responde.body, symbolize_names: true)
+    members.map do |member|
+      Member.new(member)
+    end
+  end
+
+  attr_reader :name, :house, :role, :patronus
+
+  def initialize(member)
+    @name = member[:name]
+    @house = member[:house]
+    @role = member[:role]
+    @patronus = member[:patronus]
   end
 end
