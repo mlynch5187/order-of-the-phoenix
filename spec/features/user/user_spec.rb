@@ -21,7 +21,6 @@ RSpec.describe "As a user" do
 end
 
 
-
 # As a user,
 # When I visit "/"
 # And I Select "Gryffindor" from the select field
