@@ -2,7 +2,7 @@ class Member
 
   def self.house_members(house)
     response = Faraday.get('https://www.potterapi.com/v1/characters') do |f|
-      f.params['key'] = '$2a$10$2klzYEw2EcBFCX6UW6actOfDX7p8laQc9R0S6XBcyIkyfA3WLmwXG'
+      f.params['key'] = ENV['POTTER_KEY']
       f.params['house'] = house
       f.params['orderOfThePhoenix'] = true
     end
